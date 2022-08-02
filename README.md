@@ -1,2 +1,2 @@
 # AlgorithmByJava
-LeetCode Algorithm by Java 
+### Note: Need to pull the whole package so that the methods call works correcortly.

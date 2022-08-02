@@ -49,7 +49,7 @@ public class GenerateRandomArray {
       int[] arr1 = generateRandomArray(maxSize, maxValue);
       int[] arr2 = Arrays.copyOf(arr1, arr1.length);
 
-      SelectionSort.selectionSort(arr1);
+      QuickSort.quickSort(arr1);
       BubbleSort.bubbleSort(arr2);
 
       strArr1 = Arrays.toString(arr1);
@@ -65,5 +65,4 @@ public class GenerateRandomArray {
 
     System.out.println(succeed? "Test Passed!" : "Test Wrong!");
   }
-
 }
