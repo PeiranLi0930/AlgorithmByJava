@@ -36,6 +36,7 @@ public class Priority {
   }
 
   public static void main(String[] args) {
+    // For Integer
     PriorityQueue<Integer> heap = new PriorityQueue<>(new MyComparator());
     heap.add(1);
     heap.add(4);
