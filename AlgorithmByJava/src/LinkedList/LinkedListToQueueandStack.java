@@ -33,19 +33,21 @@ public class LinkedListToQueueandStack {
       return size;
     }
 
-    public void offer(TheType value) {
+
+    public void put(TheType value) {
       Node<TheType> cur = new Node<TheType>(value);
-      if (tail == null) {
+
+      if (tail == null) { // if the Queue is empty
         head = cur;
         tail = cur;
-      } else {
+      } else { // if there already exists at least one node
         tail.next = cur;
         tail = cur;
       }
-      size++;
+      size++; // update the size
     }
 
-    public TheType poll() {
+    public TheType poll() { // pop out from head
       TheType ans = null;
 
       if (head != null) {
@@ -53,7 +55,7 @@ public class LinkedListToQueueandStack {
         head = head.next;
         size--;
       }
-      if (head == null) {
+      if (head == null) { // if the all elements has been popped out
         tail = null;
       }
 
