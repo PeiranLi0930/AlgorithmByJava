@@ -84,10 +84,6 @@ public class DoubleLinkedListToQueue {
       }
       return result;
     }
-
-
-
-
   }
 
 }
