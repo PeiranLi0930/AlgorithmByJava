@@ -1,6 +1,9 @@
 package LinkedList;
 
 /**
+ *
+ * All the operations' time complexity is O(1)
+ *
  * @author Peiran Li
  */
 public class LinkedListToQueueandStack {
@@ -62,7 +65,7 @@ public class LinkedListToQueueandStack {
       return ans;
     }
 
-    public TheType peek() {
+    public TheType peek() { // just return the head's value, doesn't pop out
       TheType ans = null;
       if (head != null) {
         ans = head.value;
@@ -88,7 +91,7 @@ public class LinkedListToQueueandStack {
       return size;
     }
 
-    public void push (TheType value) {
+    public void put(TheType value) {
       Node<TheType> curr = new Node<>(value);
       if (head == null) {
         head = curr;
@@ -99,7 +102,7 @@ public class LinkedListToQueueandStack {
       size++;
     }
 
-    public TheType pop() {
+    public TheType poll() {
       TheType ans = null;
       if (head != null) {
         ans = head.value;
@@ -111,11 +114,9 @@ public class LinkedListToQueueandStack {
 
     public TheType peek() {
       TheType ans = null;
-
       if (head != null) {
         ans = head.value;
       }
-
       return ans;
     }
   }

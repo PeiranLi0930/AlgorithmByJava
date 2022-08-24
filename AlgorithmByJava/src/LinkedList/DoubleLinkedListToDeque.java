@@ -1,10 +1,9 @@
 package LinkedList;
 
-
 /**
  * @author Peiran Li
  */
-public class DoubleLinkedListToQueue {
+public class DoubleLinkedListToDeque {
   public static class Node<TheType> {
     public TheType value;
     public Node next;
