@@ -1,6 +1,8 @@
 package LinkedList;
 
 /**
+ * Note: We cannot implement Deque using Single Linked List.
+ *
  * @author Peiran Li
  */
 public class DoubleLinkedListToDeque {
@@ -55,7 +57,7 @@ public class DoubleLinkedListToDeque {
 
       size--;
       result = head.value;
-      if (head == tail) {
+      if (head == tail) { // if head and tail point to the same element.
         head = null;
         tail = null;
       } else {
