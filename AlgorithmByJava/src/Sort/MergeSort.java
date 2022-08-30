@@ -54,15 +54,43 @@ public class MergeSort {
   }
 
   // ==========================================================================
+  // Time Complexity: O(NlogN)
   public static void mergeSortWithoutRecursion(int[] arr) {
     if (arr == null || arr.length < 2) {
       return;
     }
-
     int step = 1;
     int N = arr.length;
     while (step < N) {
-      
+      int L = 0;
+      while (L < N) {
+        int mid = 0;
+
+        if (N - L >= step) {
+          mid = step + L -1;
+        } else {
+          mid = N - 1;
+        }
+        if (mid == N - 1) {
+          break;
+        }
+
+        int R = 0;
+        if (N - 1 - mid >= step) {
+          R = mid + step;
+        } else {
+          R = N - 1;
+        }
+
+        merge(arr, L, mid, R);
+
+        if (R == N -1) {
+          break;
+        } else {
+          L = R + 1;
+        }
+      }
+
       if (step > N / 2) { // prevent from overflow
         break;
       } else {

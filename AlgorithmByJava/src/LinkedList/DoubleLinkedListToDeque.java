@@ -2,7 +2,8 @@ package LinkedList;
 
 /**
  * Note: We cannot implement Deque using Single Linked List.
- *
+ * Because the single linked list cannot implement popping elements from the
+ * tail.
  * @author Peiran Li
  */
 public class DoubleLinkedListToDeque {
@@ -49,7 +50,7 @@ public class DoubleLinkedListToDeque {
       size--;
     }
 
-    public TheType pullHead() {
+    public TheType popHead() {
       TheType result;
       if (head == null) {
         return null;
@@ -60,7 +61,7 @@ public class DoubleLinkedListToDeque {
       if (head == tail) { // if head and tail point to the same element.
         head = null;
         tail = null;
-      } else {
+      } else {  // at least two elements in the list
         head = head.next;
         head.last = null;
       }
@@ -68,7 +69,7 @@ public class DoubleLinkedListToDeque {
       return result;
     }
 
-    public TheType pullTail() {
+    public TheType popTail() {
       TheType result = null;
       if (head == null) {
         return null;
@@ -86,5 +87,4 @@ public class DoubleLinkedListToDeque {
       return result;
     }
   }
-
 }
