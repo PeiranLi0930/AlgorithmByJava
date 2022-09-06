@@ -7,8 +7,8 @@ public class PMMDbyBitOperation {
   public static int add(int a, int b) {
     int sum = a;
     while (b != 0) {
-      sum = a ^ b;  // add operation without carry
-      b = (a & b) << 1;
+      sum = a ^ b;  // bit add operation without carry-on
+      b = (a & b) << 1; // the carry-on information
       a = sum;
     }
     return sum;
@@ -21,11 +21,11 @@ public class PMMDbyBitOperation {
   public static int multiply (int a, int b) {
     int result = 0;
     while (b != 0) {
-      if ((b & 1 ) != 0) {
+      if ((b & 1 ) != 0) { // determine whether the last bit in b is '1'
         result = add(result, a);
       }
       a <<= 1;
-      b >>>= 1; // move right 1 bit and then put 0 to the left most
+      b >>>= 1; // move right 1 bit without consideration of b's negativity
     }
     return result;
   }
@@ -38,6 +38,12 @@ public class PMMDbyBitOperation {
     return a < 0;
   }
 
+  /**
+   * Note: First, we need to change the numbers into their absolute values.
+   * @param a
+   * @param b
+   * @return
+   */
   public static int divide(int a, int b) {
     if (a == Integer.MIN_VALUE && b == Integer.MIN_VALUE) {
       return 1;
@@ -49,6 +55,7 @@ public class PMMDbyBitOperation {
         // the situation occurs, then return Interger.MAX_VALUE.
         return Integer.MAX_VALUE;
       } else {
+        // | a (Integer.MIN_VALUE) + 1 |
         int ans = divide(add(a, 1), b);
         return add(ans, divide(minus(a, multiply(ans, b)), b));
       }
@@ -64,11 +71,11 @@ public class PMMDbyBitOperation {
         x = minus(x, y << i);
       }
     }
-    // consider the negative
+    // consider the negativity
     return isNegative(a) ^ isNegative(b) ? add(~result, 1) : result;
   }
 
   public static void main(String[] args) {
-    System.out.println(divide(Integer.MIN_VALUE, 1));
+    System.out.println(-18/7);
   }
 }
