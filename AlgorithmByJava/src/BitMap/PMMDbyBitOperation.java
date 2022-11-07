@@ -6,8 +6,8 @@ package BitMap;
 public class PMMDbyBitOperation {
   public static int add(int a, int b) {
     int sum = a;
-    while (b != 0) {
-      sum = a ^ b;  // bit add operation without carry-on
+    while (b != 0) { // stop without carry-ons
+      sum = a ^ b;  // bit add operation without carry-on (xor operation)
       b = (a & b) << 1; // the carry-on information
       a = sum;
     }

@@ -5,7 +5,7 @@ import static Sort.Swap.swap;
 /**
  * @author Peiran Li
  */
-public class InsertSort {
+public class InsertionSort {
   public static void insertionSort(int[] arr) {
     if (arr == null || arr.length < 2) {
       return;

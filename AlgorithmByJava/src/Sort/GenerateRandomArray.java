@@ -1,7 +1,6 @@
 package Sort;
 
 import java.util.Arrays;
-import static Sort.InsertSort.insertionSort;
 
 /**
  * This is a good test method to verify different algorithms
